@@ -1,0 +1,52 @@
+﻿<Controls:MetroWindow x:Class="WinAria.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WinAria"
+        xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls"
+        mc:Ignorable="d"
+        Title="WinAria(WIP)" Height="387.677" Width="756.02" Loaded="MetroWindow_Loaded" Closing="MetroWindow_Closing">
+    <Controls:MetroWindow.RightWindowCommands>
+        <Controls:WindowCommands>
+            <Button Content="New Mission" Click="Button_Click" />
+            <Button Content="Settings" />
+        </Controls:WindowCommands>
+    </Controls:MetroWindow.RightWindowCommands>
+    <Grid>
+        <TabControl Margin="10">
+            <TabItem Header="Missions">
+                <Grid Background="#FFE5E5E5">
+                    <ListBox HorizontalAlignment="Left" Width="118" x:Name="StateList" SelectionChanged="StateList_SelectionChanged">
+                        <ListBoxItem Content="Active" IsSelected="True"/>
+                        <ListBoxItem Content="Paused" />
+                        <ListBoxItem Content="Waiting"/>
+                    </ListBox>
+                    <ListView x:Name="missionListView" Margin="123,0,0,0" ItemsSource="{Binding MissionList}">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="File Name" Width="300" DisplayMemberBinding="{Binding Path=files[0].path}"/>
+                                <GridViewColumn Header="Size" Width="80" DisplayMemberBinding="{Binding Path=totalLengthSize}"/>
+                                <GridViewColumn Header="Status" Width="100" DisplayMemberBinding="{Binding Path=status}"/>
+                                <GridViewColumn Header="Progress" Width="100" DisplayMemberBinding="{Binding Path=progress}"/>
+                                <GridViewColumn Header="Transfer rate" Width="120" DisplayMemberBinding="{Binding downloadSpeedSize}"/>
+                                <GridViewColumn Header="Action" Width="150">
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <StackPanel Orientation="Horizontal">
+                                                <Button Content="Start" Tag="{Binding gid}" Click="Button_Click_3"></Button>
+                                                <Button Content="Stop" Tag="{Binding gid}" Click="Button_Click_1"></Button>
+                                                <Button Content="Delete" Tag="{Binding gid}" Click="Button_Click_2"></Button>
+                                            </StackPanel>
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                </Grid>
+            </TabItem>
+        </TabControl>
+
+    </Grid>
+</Controls:MetroWindow>
