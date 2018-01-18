@@ -9,8 +9,8 @@
 
 ## Thanks for
 
-* (MahApps.Metro)[https://github.com/MahApps/MahApps.Metro]
+* [MahApps.Metro](https://github.com/MahApps/MahApps.Metro)
 
-* (JSON.Net)[https://www.newtonsoft.com/json]
+* [JSON.Net](https://www.newtonsoft.com/json)
 
-* (JsonRPC)[https://github.com/adamashton/json-rpc-csharp]
+* [JsonRPC](https://github.com/adamashton/json-rpc-csharp)
