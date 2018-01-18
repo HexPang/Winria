@@ -120,7 +120,7 @@
     <Compile Include="Util\AriaUtil.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="d:\Downloads\json-rpc-csharp-master\JsonRPC\JsonRPC\JsonRPC.csproj">
+    <ProjectReference Include="..\JsonRPC\JsonRPC\JsonRPC.csproj">
       <Project>{a9b68c90-2286-4cf2-8fbb-7318c5619f64}</Project>
       <Name>JsonRPC</Name>
     </ProjectReference>
