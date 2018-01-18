@@ -26,6 +26,12 @@ namespace WinAria
     /// </summary>
     public partial class MainWindow : MetroWindow
     {
+        public class BitTorrentItem
+        {
+            //public List<string> announceList { get; set; }
+            public Dictionary<string, string> info { get; set; }
+            public string mode { get; set; }
+        }
         public class MissionUri
         {
             public string status { get; set; }
@@ -41,6 +47,7 @@ namespace WinAria
             public List<MissionUri> uris { get; set; }
         }
         public class MissionItem {
+            public BitTorrentItem bittorrent { get; set; }
             public string completedLength { get; set; }
             public string connections { get; set; }
             public string dir { get; set; }
@@ -64,6 +71,23 @@ namespace WinAria
                 }
             }
             public List<MissionFile> files { get; set; }
+            public string DisplayName { get
+                {
+                    string displayName = files[0].path;
+                    if(bittorrent != null && bittorrent.info != null && bittorrent.info.ContainsKey("name"))
+                    {
+                        return bittorrent.info["name"];
+                    }
+                    else
+                    {
+                        if(displayName.IndexOf("/") > 0)
+                        {
+                            displayName = displayName.Substring(displayName.LastIndexOf("/") + 1);
+                        }
+                    }
+                    return displayName;
+                }
+            }
         }
         public ObservableCollection<MissionItem> MissionList;
         public ObservableCollection<MissionItem> WaittingMissionList;

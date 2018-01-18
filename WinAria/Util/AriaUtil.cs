@@ -48,7 +48,7 @@ namespace WinAria.Util
                     eventHandler(new JsonRPCResponse() { Result = result });
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 eventHandler(new JsonRPCResponse() { Result = null });
             }
