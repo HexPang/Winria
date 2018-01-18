@@ -9,6 +9,8 @@
 
 ## Thanks for
 
+* [Aria2](https://aria2.github.io)
+
 * [MahApps.Metro](https://github.com/MahApps/MahApps.Metro)
 
 * [JSON.Net](https://www.newtonsoft.com/json)
