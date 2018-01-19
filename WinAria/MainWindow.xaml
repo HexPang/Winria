@@ -8,7 +8,19 @@
         mc:Ignorable="d"
         BorderBrush="{DynamicResource AccentColorBrush}"
         BorderThickness="1"
-        Title="Winria" Height="387.677" Width="756.02" Loaded="MetroWindow_Loaded" Closing="MetroWindow_Closing" Icon="bitbug_favicon (2).ico">
+        Title="Winria" Height="387.677" Width="756.02" Loaded="MetroWindow_Loaded" Closing="MetroWindow_Closing">
+    <Controls:MetroWindow.IconTemplate>
+        <DataTemplate>
+            <Grid Width="{TemplateBinding Width}"
+                 Height="{TemplateBinding Height}"
+                 Margin="4"
+                 Background="Transparent"
+                 RenderOptions.EdgeMode="Aliased"
+                 RenderOptions.BitmapScalingMode="HighQuality">
+                <Image Source="Resources/Icon/Icon_01.ico"></Image>
+            </Grid>
+        </DataTemplate>
+    </Controls:MetroWindow.IconTemplate>
     <Window.Resources>
         <local:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter"></local:BoolToVisibilityConverter>
     </Window.Resources>

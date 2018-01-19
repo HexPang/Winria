@@ -24,9 +24,9 @@
     <s:String x:Key="Chinese">中文</s:String>
     <s:String x:Key="English">English</s:String>
     <s:String x:Key="Language">语言</s:String>
-
     <s:String x:Key="AddURL">新增地址</s:String>
     <s:String x:Key="AddTorrent">新增种子</s:String>
     <s:String x:Key="Spider">小蜘蛛</s:String>
     <s:String x:Key="Settings">设置</s:String>
+    <s:String x:Key="EnterURLOrMagnet">请输入URL或磁力链地址</s:String>
 </ResourceDictionary>

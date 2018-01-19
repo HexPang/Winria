@@ -160,7 +160,7 @@ namespace WinAria
 
         private async void Button_Click(object sender, RoutedEventArgs e)
         {
-            var input = await this.ShowInputAsync("WinAria", "Please enter URL or Magnet address");
+            var input = await this.ShowInputAsync("WinAria", Settings.GetLanguage(Resources)["EnterURLOrMagnet"].ToString());
             if (input != null)
             {
                 List<List<string>> files = new List<List<string>> { new List<string> { input } };

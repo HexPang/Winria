@@ -28,4 +28,5 @@
     <s:String x:Key="AddTorrent">Add Torrent</s:String>
     <s:String x:Key="Spider">Spider</s:String>
     <s:String x:Key="Settings">Settings</s:String>
+    <s:String x:Key="EnterURLOrMagnet">Please Enter URL Or Magnet</s:String>
 </ResourceDictionary>
