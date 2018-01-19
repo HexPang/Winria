@@ -1,11 +1,18 @@
-# WinAria
+# Winria
 
-## Aria2 GUI Client for Windows
+## Aria2 Client for Windows
+
+## What's News in 0.2?
+
+* Add Torrent support
+
+* Add Download Path Setting
+
+* Add Spider
 
 ## Screenshot
 
-![Screenshot](Screenshots/01.png)
-
+![Screenshot](Screenshots/02.png)
 
 ## Thanks for
 
