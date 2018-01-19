@@ -6,6 +6,8 @@
         xmlns:local="clr-namespace:WinAria"
         xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls"
         mc:Ignorable="d"
+        BorderBrush="{DynamicResource AccentColorBrush}"
+        BorderThickness="1"
         Title="{DynamicResource Settings}" Height="300" Width="548.159" Loaded="MetroWindow_Loaded">
     <Grid>
         <TabControl Margin="10,10,10,48">

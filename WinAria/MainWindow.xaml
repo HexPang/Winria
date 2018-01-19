@@ -15,7 +15,6 @@
                  Height="{TemplateBinding Height}"
                  Margin="4"
                  Background="Transparent"
-                 RenderOptions.EdgeMode="Aliased"
                  RenderOptions.BitmapScalingMode="HighQuality">
                 <Image Source="Resources/Icon/Icon_01.ico"></Image>
             </Grid>

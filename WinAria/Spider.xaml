@@ -6,7 +6,9 @@
         xmlns:local="clr-namespace:WinAria"
         xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls"
         mc:Ignorable="d"
-        Title="Spider" Height="260.907" Width="494.618" Loaded="Window_Loaded">
+        BorderBrush="{DynamicResource AccentColorBrush}"
+        BorderThickness="1"
+        Title="{DynamicResource Spider}" Height="260.907" Width="494.618" Loaded="Window_Loaded">
     <Grid>
         <ListBox x:Name="urlListBox" Margin="10,41,10,10" SelectionMode="Single">
             <ListBox.ContextMenu>
