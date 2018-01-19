@@ -6,11 +6,14 @@
         xmlns:local="clr-namespace:WinAria"
         xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls"
         mc:Ignorable="d"
-        Title="WinAria(WIP)" Height="387.677" Width="756.02" Loaded="MetroWindow_Loaded" Closing="MetroWindow_Closing">
+        Title="WinAria" Height="387.677" Width="756.02" Loaded="MetroWindow_Loaded" Closing="MetroWindow_Closing">
+    <Window.Resources>
+        <local:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter"></local:BoolToVisibilityConverter>
+    </Window.Resources>
     <Controls:MetroWindow.RightWindowCommands>
         <Controls:WindowCommands>
             <Button Content="New Mission" Click="Button_Click" />
-            <Button Content="Settings" />
+            <Button Content="Settings" Click="Button_Click_4" />
         </Controls:WindowCommands>
     </Controls:MetroWindow.RightWindowCommands>
     <Grid>
@@ -19,7 +22,7 @@
                 <Grid Background="#FFE5E5E5">
                     <ListBox HorizontalAlignment="Left" Width="118" x:Name="StateList" SelectionChanged="StateList_SelectionChanged">
                         <ListBoxItem Content="Active" IsSelected="True"/>
-                        <ListBoxItem Content="Paused" />
+                        <ListBoxItem Content="Finished" />
                         <ListBoxItem Content="Waiting"/>
                     </ListBox>
                     <ListView x:Name="missionListView" Margin="123,0,0,0" ItemsSource="{Binding MissionList}">
@@ -34,9 +37,9 @@
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
                                             <StackPanel Orientation="Horizontal">
-                                                <Button Content="Start" Tag="{Binding gid}" Click="Button_Click_3"></Button>
-                                                <Button Content="Stop" Tag="{Binding gid}" Click="Button_Click_1"></Button>
-                                                <Button Content="Delete" Tag="{Binding gid}" Click="Button_Click_2"></Button>
+                                                <Button Content="Start" Tag="{Binding gid}" Click="Button_Click_3" Visibility="{Binding status,ConverterParameter=Start,Converter={StaticResource BoolToVisibilityConverter}}"></Button>
+                                                <Button Content="Stop" Tag="{Binding gid}" Click="Button_Click_1" Visibility="{Binding status,ConverterParameter=Stop,Converter={StaticResource BoolToVisibilityConverter}}"></Button>
+                                                <Button Content="Delete" Tag="{Binding gid}" Click="Button_Click_2" Visibility="{Binding status,ConverterParameter=Delete,Converter={StaticResource BoolToVisibilityConverter}}"></Button>
                                             </StackPanel>
                                         </DataTemplate>
                                     </GridViewColumn.CellTemplate>
@@ -47,6 +50,5 @@
                 </Grid>
             </TabItem>
         </TabControl>
-
     </Grid>
 </Controls:MetroWindow>

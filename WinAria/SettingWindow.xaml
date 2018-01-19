@@ -1,0 +1,23 @@
+﻿<Controls:MetroWindow x:Class="WinAria.SettingWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WinAria"
+        xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls"
+        mc:Ignorable="d"
+        Title="Settings" Height="300" Width="548.159" Loaded="MetroWindow_Loaded">
+    <Grid>
+        <TabControl Margin="10,10,10,48">
+            <TabItem Header="General">
+                <Grid Background="#FFE5E5E5" Margin="0,0,0,-5">
+                    <Label Content="Download Path" HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="downloadPath" Height="23" Margin="103,9,90,0" TextWrapping="Wrap" VerticalAlignment="Top" Tag="dir" />
+                    <Button x:Name="changeDownloadPathBtn" Content="Change" Margin="429,10,10,0" VerticalAlignment="Top" Height="25" Click="changeDownloadPathBtn_Click"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+        <Button Content="Save" HorizontalAlignment="Left" Margin="455,0,0,8" Width="75" Height="27" VerticalAlignment="Bottom" Click="Button_Click"/>
+
+    </Grid>
+</Controls:MetroWindow>
