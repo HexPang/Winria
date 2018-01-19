@@ -13,6 +13,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Winria.Util;
 
 namespace WinAria
 {
@@ -26,6 +27,7 @@ namespace WinAria
         {
             InitializeComponent();
             config = Util.AriaUtil.LoadConfig();
+            Settings.SetLanguage("", Resources);
         }
 
         private void changeDownloadPathBtn_Click(object sender, RoutedEventArgs e)

@@ -6,6 +6,7 @@ using WinAria.Util;
 using System.Diagnostics;
 using System.Text.RegularExpressions;
 using System.Windows.Controls;
+using Winria.Util;
 
 namespace WinAria
 {
@@ -18,6 +19,7 @@ namespace WinAria
         public Spider()
         {
             InitializeComponent();
+            Settings.SetLanguage("", Resources);
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)

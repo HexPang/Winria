@@ -14,6 +14,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using WinAria.Util;
+using Winria.Util;
 
 namespace WinAria
 {
@@ -86,6 +87,7 @@ namespace WinAria
         public MainWindow()
         {
             InitializeComponent();
+            Settings.SetLanguage("", Resources); 
         }
 
         private void MetroWindow_Loaded(object sender, RoutedEventArgs e)
@@ -125,11 +127,11 @@ namespace WinAria
                 }
                 ListBoxItem item = StateList.Items[0] as ListBoxItem;
                 if(MissionList != null)
-                    item.Content = "Active (" + MissionList.Count + ")";
+                    item.Content = Settings.GetLanguage(Resources)["Active"] + " (" + MissionList.Count + ")";
                 item = StateList.Items[1] as ListBoxItem;
-                if(PausedMissionList != null) item.Content = "Finished (" + PausedMissionList.Count + ")";
+                if(PausedMissionList != null) item.Content = Settings.GetLanguage(Resources)["Finished"] + " (" + PausedMissionList.Count + ")";
                 item = StateList.Items[2] as ListBoxItem;
-                if(WaittingMissionList != null) item.Content = "Waiting (" + WaittingMissionList.Count + ")";
+                if(WaittingMissionList != null) item.Content = Settings.GetLanguage(Resources)["Waiting"] + " (" + WaittingMissionList.Count + ")";
             });
 
         }

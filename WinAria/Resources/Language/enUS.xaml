@@ -1,0 +1,31 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:Winria.Resources.Language"
+                    xmlns:s="clr-namespace:System;assembly=mscorlib">
+    <s:String x:Key="Mission">Mission</s:String>
+    <s:String x:Key="Active">Active</s:String>
+    <s:String x:Key="Finished">Finished</s:String>
+    <s:String x:Key="Waiting">Waiting</s:String>
+    <s:String x:Key="FileName">File Name</s:String>
+    <s:String x:Key="Size">Size</s:String>
+    <s:String x:Key="Status">Status</s:String>
+    <s:String x:Key="Progress">Progress</s:String>
+    <s:String x:Key="TransferRate">Transfer Rate</s:String>
+    <s:String x:Key="Action">Action</s:String>
+    <s:String x:Key="Start">Start</s:String>
+    <s:String x:Key="Stop">Stop</s:String>
+    <s:String x:Key="Delete">Delete</s:String>
+    <s:String x:Key="General">General</s:String>
+    <s:String x:Key="DownloadPath">Download Path</s:String>
+    <s:String x:Key="Change">Change</s:String>
+    <s:String x:Key="Save">Save</s:String>
+    <s:String x:Key="Search">Search</s:String>
+    <s:String x:Key="Download">Download</s:String>
+    <s:String x:Key="Chinese">中文</s:String>
+    <s:String x:Key="English">English</s:String>
+    <s:String x:Key="Language">Language</s:String>
+    <s:String x:Key="AddURL">Add URL</s:String>
+    <s:String x:Key="AddTorrent">Add Torrent</s:String>
+    <s:String x:Key="Spider">Spider</s:String>
+    <s:String x:Key="Settings">Settings</s:String>
+</ResourceDictionary>

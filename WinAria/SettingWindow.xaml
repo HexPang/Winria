@@ -6,18 +6,22 @@
         xmlns:local="clr-namespace:WinAria"
         xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls"
         mc:Ignorable="d"
-        Title="Settings" Height="300" Width="548.159" Loaded="MetroWindow_Loaded">
+        Title="{DynamicResource Settings}" Height="300" Width="548.159" Loaded="MetroWindow_Loaded">
     <Grid>
         <TabControl Margin="10,10,10,48">
-            <TabItem Header="General">
+            <TabItem Header="{DynamicResource General}">
                 <Grid Background="#FFE5E5E5" Margin="0,0,0,-5">
-                    <Label Content="Download Path" HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top"/>
+                    <Label Content="{DynamicResource DownloadPath}" HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top"/>
                     <TextBox x:Name="downloadPath" Height="23" Margin="103,9,90,0" TextWrapping="Wrap" VerticalAlignment="Top" Tag="dir" />
-                    <Button x:Name="changeDownloadPathBtn" Content="Change" Margin="429,10,10,0" VerticalAlignment="Top" Height="25" Click="changeDownloadPathBtn_Click"/>
+                    <Button x:Name="changeDownloadPathBtn" Content="{DynamicResource Change}" Margin="429,10,10,0" VerticalAlignment="Top" Height="25" Click="changeDownloadPathBtn_Click"/>
+                    <Label Visibility="Collapsed" Content="{DynamicResource Language}" HorizontalAlignment="Left" Margin="0,40,0,0" VerticalAlignment="Top" Width="98"/>
+                    <ComboBox Visibility="Collapsed" x:Name="languageBox" Margin="103,40,90,0" VerticalAlignment="Top">
+                        <ComboBoxItem Content="{DynamicResource English}"/>
+                        <ComboBoxItem Content="{DynamicResource Chinese}"/>
+                    </ComboBox>
                 </Grid>
             </TabItem>
         </TabControl>
-        <Button Content="Save" HorizontalAlignment="Left" Margin="455,0,0,8" Width="75" Height="27" VerticalAlignment="Bottom" Click="Button_Click"/>
-
+        <Button Content="{DynamicResource Save}" HorizontalAlignment="Left" Margin="455,0,0,8" Width="75" Height="27" VerticalAlignment="Bottom" Click="Button_Click"/>
     </Grid>
 </Controls:MetroWindow>
