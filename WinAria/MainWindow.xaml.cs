@@ -4,7 +4,10 @@ using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.Globalization;
+using System.IO;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Timers;
 using System.Windows;
@@ -79,7 +82,7 @@ namespace WinAria
         public ObservableCollection<MissionItem> WaittingMissionList;
         public ObservableCollection<MissionItem> PausedMissionList;
 
-        private Timer timer = null;
+        private System.Timers.Timer timer = null;
         public MainWindow()
         {
             InitializeComponent();
@@ -95,7 +98,7 @@ namespace WinAria
             {
                 reloadList();
             }
-            timer = new Timer();
+            timer = new System.Timers.Timer();
             timer.Enabled = true;
             timer.Interval = 1000;
             timer.Elapsed += Timer_Elapsed;
@@ -122,11 +125,11 @@ namespace WinAria
                 }
                 ListBoxItem item = StateList.Items[0] as ListBoxItem;
                 if(MissionList != null)
-                    item.Content = "Active(" + MissionList.Count + ")";
+                    item.Content = "Active (" + MissionList.Count + ")";
                 item = StateList.Items[1] as ListBoxItem;
-                if(PausedMissionList != null) item.Content = "Paused(" + PausedMissionList.Count + ")";
+                if(PausedMissionList != null) item.Content = "Finished (" + PausedMissionList.Count + ")";
                 item = StateList.Items[2] as ListBoxItem;
-                if(WaittingMissionList != null) item.Content = "Waiting(" + WaittingMissionList.Count + ")";
+                if(WaittingMissionList != null) item.Content = "Waiting (" + WaittingMissionList.Count + ")";
             });
 
         }
@@ -153,20 +156,14 @@ namespace WinAria
             });
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private async void Button_Click(object sender, RoutedEventArgs e)
         {
-            ShowMessageAsync();
-        }
-
-        private async Task ShowMessageAsync()
-        {
-
             var input = await this.ShowInputAsync("WinAria", "Please enter URL or Magnet address");
-            if(input != null)
+            if (input != null)
             {
                 List<List<string>> files = new List<List<string>> { new List<string> { input } };
-                AriaUtil.JsonRequestAsync("aria2.addUri", JToken.FromObject(files),(ent)=> {
-                    if(ent.Result != null)
+                AriaUtil.JsonRequestAsync("aria2.addUri", JToken.FromObject(files), (ent) => {
+                    if (ent.Result != null)
                     {
                         reloadList();
                     }
@@ -217,6 +214,27 @@ namespace WinAria
         {
             SettingWindow settingWindow = new SettingWindow();
             settingWindow.ShowDialog();
+
+        }
+
+        private void Button_Click_5(object sender, RoutedEventArgs e)
+        {
+            System.Windows.Forms.OpenFileDialog ofd = new System.Windows.Forms.OpenFileDialog();
+            ofd.Filter = "*.torrent|*.torrent";
+            if(ofd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                byte[] fileBuffer = File.ReadAllBytes(ofd.FileName);
+                string base64Str = Convert.ToBase64String(fileBuffer);
+                AriaUtil.JsonRequestAsync("aria2.addTorrent", JToken.FromObject(new List<string> { base64Str }), (ent) => {
+                    //Debug.WriteLine(ent);
+                });
+            }
+        }
+
+        private void Button_Click_6(object sender, RoutedEventArgs e)
+        {
+            Spider spider = new Spider();
+            spider.Show();
 
         }
     }

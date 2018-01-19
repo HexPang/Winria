@@ -6,13 +6,15 @@
         xmlns:local="clr-namespace:WinAria"
         xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls"
         mc:Ignorable="d"
-        Title="WinAria" Height="387.677" Width="756.02" Loaded="MetroWindow_Loaded" Closing="MetroWindow_Closing">
+        Title="Winria" Height="387.677" Width="756.02" Loaded="MetroWindow_Loaded" Closing="MetroWindow_Closing">
     <Window.Resources>
         <local:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter"></local:BoolToVisibilityConverter>
     </Window.Resources>
     <Controls:MetroWindow.RightWindowCommands>
         <Controls:WindowCommands>
-            <Button Content="New Mission" Click="Button_Click" />
+            <Button Content="Add URL" Click="Button_Click" />
+            <Button Content="Add Torrent" Click="Button_Click_5"/>
+            <Button Content="Spider" Click="Button_Click_6"/>
             <Button Content="Settings" Click="Button_Click_4" />
         </Controls:WindowCommands>
     </Controls:MetroWindow.RightWindowCommands>

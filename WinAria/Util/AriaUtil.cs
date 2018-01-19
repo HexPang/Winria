@@ -167,5 +167,14 @@ namespace WinAria.Util
 
             return (size / Math.Pow(num, 4)).ToString("f2") + "T"; //T
         }
+
+        public static void AddURI(List<string> uri,Action<JsonRPCResponse> callback)
+        {
+            List<List<string>> files = new List<List<string>> { uri };
+
+            AriaUtil.JsonRequestAsync("aria2.addUri", JToken.FromObject(files), (ent) => {
+                callback(ent);
+            });
+        }
     }
 }
