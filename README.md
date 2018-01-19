@@ -10,9 +10,11 @@
 
 * Add Spider
 
+* New Icon
+
 ## Screenshot
 
-![Screenshot](Screenshots/02.png)
+![Screenshot](Screenshots/03.png)
 
 ## Thanks for
 

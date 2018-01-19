@@ -10,9 +10,13 @@ namespace Winria.Util
     public class Settings
     {
         public static ResourceDictionary LanguageResource { get; set; }
+        private static string getLanguageName()
+        {
+            return System.Globalization.CultureInfo.InstalledUICulture.TwoLetterISOLanguageName; 
+        }
         public static ResourceDictionary GetLanguage(ResourceDictionary resourceDictionary)
         {
-            string languageName = System.Globalization.CultureInfo.InstalledUICulture.TwoLetterISOLanguageName;
+            string languageName = getLanguageName();
             ResourceDictionary resource;
             try
             {
@@ -28,8 +32,8 @@ namespace Winria.Util
         }
         public static void SetLanguage(string languageName,ResourceDictionary resourceDictionary)
         {
-            languageName = System.Globalization.CultureInfo.InstalledUICulture.TwoLetterISOLanguageName;
-            if(LanguageResource != null)
+            languageName = getLanguageName();
+            if (LanguageResource != null)
             {
                 resourceDictionary.MergedDictionaries.Clear();
             }

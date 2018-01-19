@@ -154,12 +154,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="bitbug_favicon.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="bitbug_favicon %282%29.ico" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Resources\Icon\Icon_02.ico" />
   </ItemGroup>
   <ItemGroup>
